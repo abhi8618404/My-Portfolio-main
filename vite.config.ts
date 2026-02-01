@@ -17,5 +17,5 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: mode === "production" ? "/My-Portfolio-main/" : "/",
+  base: "./", // <-- use relative paths for root domain
 }));

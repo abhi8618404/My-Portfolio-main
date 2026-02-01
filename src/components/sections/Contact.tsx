@@ -1,0 +1,125 @@
+import React, { useState } from 'react';
+import { Linkedin, Github, Mail, Instagram, Copy, Check } from 'lucide-react';
+import SplitText from "@/components/SplitText";
+
+// --- Define the types for the component's props ---
+interface SocialLinkProps {
+  href: string;
+  tooltip: string;
+  children: React.ReactNode;
+  brandColor?: string;
+  gradientClassName?: string;
+}
+
+const SocialLink: React.FC<SocialLinkProps> = ({ href, tooltip, brandColor, gradientClassName, children }) => {
+  const isMailLink = href.startsWith('mailto:');
+  
+  const baseClasses = `group flex justify-center p-4 rounded-xl drop-shadow-lg text-white font-semibold 
+                       transition-all duration-500 
+                       hover:-translate-y-2 hover:rounded-[50%]`;
+
+  const finalClassName = gradientClassName ? `${baseClasses} ${gradientClassName}` : baseClasses;
+
+  return (
+    <a 
+      href={href}
+      target={isMailLink ? '_self' : '_blank'}
+      rel={isMailLink ? undefined : 'noopener noreferrer'}
+      className={finalClassName}
+      style={{ backgroundColor: !gradientClassName ? brandColor : undefined }}
+    >
+      {children}
+      <span 
+        className="absolute opacity-0 group-hover:opacity-100 group-hover:text-gray-900 dark:group-hover:text-gray-200 
+                   group-hover:text-sm group-hover:-translate-y-12 duration-700
+                   bg-white dark:bg-gray-800 px-3 py-1 rounded-md shadow-lg"
+      >
+        {tooltip}
+      </span>
+    </a>
+  );
+};
+
+const Contact = () => {
+  const [copyText, setCopyText] = useState('Copy');
+  const email = 'abhishekbableshwar@gmail.com';
+
+  const handleCopy = () => {
+    const textArea = document.createElement("textarea");
+    textArea.value = email;
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+        document.execCommand('copy');
+        setCopyText('Copied!');
+        setTimeout(() => setCopyText('Copy'), 2000);
+    } catch (err) {
+        console.error('Failed to copy text: ', err);
+    }
+    document.body.removeChild(textArea);
+  };
+
+  return (
+    <section id="contact" className="relative py-24 bg-transparent">
+      <div className="container mx-auto max-w-4xl relative z-10">
+        <div className="text-center mb-12">
+            <SplitText
+              text="Let's Connect"
+              className="font-display text-4xl md:text-5xl font-bold text-foreground"
+              splitType="chars"
+              delay={50}
+            />
+          <p className="text-lg text-muted-foreground mt-2">I'm always open to discussing new projects and opportunities.</p>
+        </div>
+
+        <div className="flex items-center justify-center gap-6 md:gap-8">
+          <SocialLink 
+            href="https://linkedin.com/in/abhishek-b-275841344" 
+            tooltip="LinkedIn" 
+            brandColor="#0077B5"
+          >
+            <Linkedin className="w-6 h-6 md:w-8 md:h-8" />
+          </SocialLink>
+          
+          <SocialLink 
+            href="https://github.com/abhi8618404" 
+            tooltip="GitHub" 
+            brandColor="#181717"
+          >
+            <Github className="w-6 h-6 md:w-8 md:h-8" />
+          </SocialLink>
+
+          <SocialLink 
+            href={`mailto:${email}`}
+            tooltip="Email" 
+            brandColor="#DB4437"
+          >
+            <Mail className="w-6 h-6 md:w-8 md:h-8" />
+          </SocialLink>
+        </div>
+
+        <div className="mt-12 text-center">
+          <p className="text-muted-foreground mb-4">Or reach me directly:</p>
+          <div 
+            // --- THE FIX IS HERE: Added a dark border for light mode ---
+            className="relative inline-flex items-center justify-center p-1 rounded-full
+                       bg-white/10 dark:bg-black/30 backdrop-blur-xl 
+                       border border-black/20 dark:border-white/20"
+          >
+            <span className="px-6 py-2 text-lg text-foreground">{email}</span>
+            <button
+              onClick={handleCopy}
+              className="flex items-center gap-2 bg-gray-700/50 text-white font-semibold py-2.5 px-4 rounded-full transition-all duration-300 hover:bg-cyan-500"
+            >
+              {copyText === 'Copy' ? <Copy size={16} /> : <Check size={16} className="text-green-400" />}
+              {copyText}
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;

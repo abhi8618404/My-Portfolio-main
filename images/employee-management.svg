@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="empGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6366F1;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="empGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="url(#empGrad)" opacity="0.1"/>
+  
+  <!-- Dashboard Header -->
+  <rect x="20" y="20" width="360" height="50" rx="8" fill="white" opacity="0.95"/>
+  <rect x="30" y="30" width="120" height="12" rx="6" fill="url(#empGrad)"/>
+  <rect x="280" y="35" width="80" height="20" rx="10" fill="url(#empGrad2)" opacity="0.8"/>
+  
+  <!-- Employee Cards -->
+  <!-- Card 1 -->
+  <rect x="20" y="90" width="110" height="90" rx="8" fill="white" opacity="0.95"/>
+  <circle cx="75" cy="120" r="20" fill="url(#empGrad)" opacity="0.7"/>
+  <rect x="50" y="150" width="50" height="6" rx="3" fill="#E5E7EB"/>
+  <rect x="50" y="160" width="40" height="4" rx="2" fill="#9CA3AF"/>
+  <rect x="50" y="170" width="60" height="4" rx="2" fill="#9CA3AF"/>
+  
+  <!-- Card 2 -->
+  <rect x="145" y="90" width="110" height="90" rx="8" fill="white" opacity="0.95"/>
+  <circle cx="200" cy="120" r="20" fill="url(#empGrad2)" opacity="0.7"/>
+  <rect x="175" y="150" width="50" height="6" rx="3" fill="#E5E7EB"/>
+  <rect x="175" y="160" width="40" height="4" rx="2" fill="#9CA3AF"/>
+  <rect x="175" y="170" width="60" height="4" rx="2" fill="#9CA3AF"/>
+  
+  <!-- Card 3 -->
+  <rect x="270" y="90" width="110" height="90" rx="8" fill="white" opacity="0.95"/>
+  <circle cx="325" cy="120" r="20" fill="url(#empGrad)" opacity="0.7"/>
+  <rect x="300" y="150" width="50" height="6" rx="3" fill="#E5E7EB"/>
+  <rect x="300" y="160" width="40" height="4" rx="2" fill="#9CA3AF"/>
+  <rect x="300" y="170" width="60" height="4" rx="2" fill="#9CA3AF"/>
+  
+  <!-- Stats Section -->
+  <rect x="20" y="200" width="360" height="80" rx="8" fill="white" opacity="0.95"/>
+  <rect x="40" y="220" width="80" height="40" rx="6" fill="url(#empGrad)" opacity="0.2"/>
+  <rect x="40" y="220" width="80" height="8" rx="4" fill="url(#empGrad)"/>
+  <rect x="40" y="235" width="60" height="6" rx="3" fill="#6B7280"/>
+  
+  <rect x="140" y="220" width="80" height="40" rx="6" fill="url(#empGrad2)" opacity="0.2"/>
+  <rect x="140" y="220" width="80" height="8" rx="4" fill="url(#empGrad2)"/>
+  <rect x="140" y="235" width="60" height="6" rx="3" fill="#6B7280"/>
+  
+  <rect x="260" y="220" width="80" height="40" rx="6" fill="url(#empGrad)" opacity="0.2"/>
+  <rect x="260" y="220" width="80" height="8" rx="4" fill="url(#empGrad)"/>
+  <rect x="260" y="235" width="60" height="6" rx="3" fill="#6B7280"/>
+</svg>

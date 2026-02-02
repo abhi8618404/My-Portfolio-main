@@ -14,11 +14,9 @@ import { useIsDesktop } from "@/hooks/useIsDesktop";
 
 const queryClient = new QueryClient();
 
-// Read Vite's BASE_URL so the router basename matches your build base.
-// - In dev: import.meta.env.BASE_URL === "/"
-// - In production (GitHub Pages repo site): it will be "/My-Portfolio-main/"
-const rawBase = import.meta.env.BASE_URL ?? "/";
-const basename = rawBase === "/" ? "/" : rawBase.replace(/\/$/, "");
+// Read Vite BASE_URL so router basename matches dev ("/") and production ("/My-Portfolio-main/")
+const rawBase = (import.meta as any).env?.BASE_URL ?? "/";
+const basename = rawBase === "/" ? "/" : String(rawBase).replace(/\/$/, "");
 
 const router = createBrowserRouter(
   [
@@ -33,7 +31,6 @@ const router = createBrowserRouter(
   ],
   {
     basename,
-    // Opt in to v7 behaviors to remove those console warnings
     future: {
       v7_relativeSplatPath: true,
       v7_startTransition: true,
@@ -53,7 +50,7 @@ const App = () => {
             <Sonner />
             {isDesktop && <CustomCursor />}
 
-            {/* Render the data-router-powered router */}
+            {/* RouterProvider will render Layout and child routes via <Outlet /> */}
             <RouterProvider router={router} />
           </TooltipProvider>
         </CursorProvider>

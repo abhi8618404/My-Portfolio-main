@@ -15,8 +15,21 @@ import { useIsDesktop } from "@/hooks/useIsDesktop";
 const queryClient = new QueryClient();
 
 // Read Vite BASE_URL so router basename matches dev ("/") and production ("/My-Portfolio-main/")
-const rawBase = (import.meta as any).env?.BASE_URL ?? "/";
-const basename = rawBase === "/" ? "/" : String(rawBase).replace(/\/$/, "");
+const baseUrl = import.meta.env.BASE_URL ?? "/";
+const normalizedBase =
+  baseUrl !== "/" && baseUrl.endsWith("/") ? baseUrl.slice(0, -1) : baseUrl;
+const inferredBase = (() => {
+  if (normalizedBase !== "/") {
+    return normalizedBase;
+  }
+  if (typeof window === "undefined") {
+    return "/";
+  }
+  const [firstSegment] = window.location.pathname
+    .split("/")
+    .filter(Boolean);
+  return firstSegment ? `/${firstSegment}` : "/";
+})();
 
 const router = createBrowserRouter(
   [
@@ -30,7 +43,7 @@ const router = createBrowserRouter(
     },
   ],
   {
-    basename,
+    basename: inferredBase,
     future: {
       v7_relativeSplatPath: true,
       v7_startTransition: true,

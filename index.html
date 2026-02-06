@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Abhishek B — Backend Developer & QA Engineer Portfolio</title>
 
     <meta
@@ -10,7 +11,8 @@
       content="Portfolio of Abhishek B — Backend Developer & QA Engineer skilled in Java, Spring Boot, REST APIs, and automation testing. Explore projects, skills, and contact information."
     />
     <meta name="author" content="Abhishek B" />
-    <link rel="canonical" href="/" />
+
+    <link rel="canonical" href="./" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,17 +24,17 @@
     <meta property="og:title" content="Abhishek B — Backend Developer & QA Engineer Portfolio" />
     <meta property="og:description" content="Explore projects, skills, and contact information for Abhishek B, Backend Developer & QA Engineer." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="/" />
-    <meta property="og:image" content="/og.jpg" />
+    <meta property="og:url" content="./" />
+    <meta property="og:image" content="./og.jpg" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Abhishek B — Backend Developer & QA Engineer Portfolio" />
     <meta name="twitter:description" content="Backend Developer & QA Engineer skilled in Java, Spring Boot, REST APIs, and automation testing. View projects and skills." />
-    <meta name="twitter:image" content="/og.jpg" />
+    <meta name="twitter:image" content="./og.jpg" />
 
-    <!-- ✅ FIXED: removed %BASE_URL% -->
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- ✅ Correct for GitHub Pages repo site -->
+    <link rel="icon" href="./favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
     <meta name="theme-color" content="#0f172a" />
 
     <style>
@@ -62,7 +64,7 @@
         left: 0;
         width: 24px;
         height: 24px;
-        background-image: url("/images/navigation.avif");
+        background-image: url("./images/navigation.avif");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -76,19 +78,19 @@
       }
 
       .custom-cursor.hover::before {
-        background-image: url("/images/navigation-hand.avif");
+        background-image: url("./images/navigation-hand.avif");
         transform: translate(-3px, -4px) scale(1.4);
       }
 
       /* Grabbing state */
       .custom-cursor.grabbing::before {
-        background-image: url("/images/navigation-grab.avif");
+        background-image: url("./images/navigation-grab.avif");
         transform: translate(-3px, -4px) scale(1.2);
       }
 
       /* Terminal hover state */
       .custom-cursor.terminal-hover::before {
-        background-image: url("/images/navigation-grab.avif");
+        background-image: url("./images/navigation-grab.avif");
         transform: translate(-3px, -4px) scale(1.1);
       }
 
@@ -104,7 +106,7 @@
 
       /* Keep arrow on click (override grabbing) */
       .custom-cursor.grabbing::before {
-        background-image: url("/images/navigation.avif") !important;
+        background-image: url("./images/navigation.avif") !important;
         transform: translate(-3px, -4px) scale(1) !important;
       }
     </style>
@@ -114,7 +116,7 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Abhishek B",
-        "url": "/",
+        "url": "./",
         "sameAs": [
           "https://github.com/abhi8618404",
           "https://www.linkedin.com/in/abhishek-b-275841344"
@@ -128,7 +130,7 @@
   <body>
     <div id="root"></div>
 
-    <!-- ✅ FIXED: Vite entry must be /src/main.tsx -->
+    <!-- Vite entry -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

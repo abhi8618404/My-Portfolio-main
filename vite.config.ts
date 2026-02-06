@@ -10,24 +10,13 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-<<<<<<< HEAD
-  build: {
-    outDir: "docs",
-    emptyOutDir: true,
-  },
-  plugins: [
-    react(),
-    mode === "development" && componentTagger(),
-  ].filter(Boolean),
-=======
 
->>>>>>> f7ad076 (Fix GitHub Pages deploy)
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
 
-  // ✅ IMPORTANT for GitHub Pages
+  // ✅ GitHub Pages (repo site)
   base: "/My-Portfolio-main/",
 }));

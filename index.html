@@ -12,7 +12,7 @@
     />
     <meta name="author" content="Abhishek B" />
 
-    <link rel="canonical" href="./" />
+    <link rel="canonical" href="https://abhi8618404.github.io/My-Portfolio-main/" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,7 +24,7 @@
     <meta property="og:title" content="Abhishek B — Backend Developer & QA Engineer Portfolio" />
     <meta property="og:description" content="Explore projects, skills, and contact information for Abhishek B, Backend Developer & QA Engineer." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="./" />
+    <meta property="og:url" content="https://abhi8618404.github.io/My-Portfolio-main/" />
     <meta property="og:image" content="./og.jpg" />
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -32,18 +32,15 @@
     <meta name="twitter:description" content="Backend Developer & QA Engineer skilled in Java, Spring Boot, REST APIs, and automation testing. View projects and skills." />
     <meta name="twitter:image" content="./og.jpg" />
 
-    <!-- ✅ Correct for GitHub Pages repo site -->
     <link rel="icon" href="./favicon.ico" sizes="any" />
     <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
     <meta name="theme-color" content="#0f172a" />
 
     <style>
-      /* Hide default cursor */
       * {
         cursor: none !important;
       }
 
-      /* Custom cursor container */
       .custom-cursor {
         position: fixed;
         top: 0;
@@ -56,7 +53,6 @@
         will-change: transform;
       }
 
-      /* Custom cursor image */
       .custom-cursor::before {
         content: "";
         position: absolute;
@@ -72,7 +68,6 @@
         transition: transform 0.15s ease-out;
       }
 
-      /* Hover animation for interactive elements */
       .custom-cursor.hover {
         transform: scale(1.1);
       }
@@ -82,19 +77,16 @@
         transform: translate(-3px, -4px) scale(1.4);
       }
 
-      /* Grabbing state */
       .custom-cursor.grabbing::before {
-        background-image: url("./images/navigation-grab.avif");
-        transform: translate(-3px, -4px) scale(1.2);
+        background-image: url("./images/navigation.avif") !important;
+        transform: translate(-3px, -4px) scale(1) !important;
       }
 
-      /* Terminal hover state */
       .custom-cursor.terminal-hover::before {
         background-image: url("./images/navigation-grab.avif");
         transform: translate(-3px, -4px) scale(1.1);
       }
 
-      /* Hide cursor on mobile/touch devices */
       @media (hover: none) and (pointer: coarse) {
         .custom-cursor {
           display: none;
@@ -103,12 +95,6 @@
           cursor: auto !important;
         }
       }
-
-      /* Keep arrow on click (override grabbing) */
-      .custom-cursor.grabbing::before {
-        background-image: url("./images/navigation.avif") !important;
-        transform: translate(-3px, -4px) scale(1) !important;
-      }
     </style>
 
     <script type="application/ld+json">
@@ -116,7 +102,7 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Abhishek B",
-        "url": "./",
+        "url": "https://abhi8618404.github.io/My-Portfolio-main/",
         "sameAs": [
           "https://github.com/abhi8618404",
           "https://www.linkedin.com/in/abhishek-b-275841344"
@@ -130,7 +116,6 @@
   <body>
     <div id="root"></div>
 
-    <!-- Vite entry -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
